@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>October 2026 Apostolic Bangers — Host Key</title>
+  <style>
+    :root {
+      --navy: #10244a;
+      --navy-2: #1a3a73;
+      --gold: #c9a227;
+      --gold-soft: #f4e6b2;
+      --paper: #f6f1e6;
+      --card: #fffdf8;
+      --ink: #1c2434;
+      --muted: #5b6475;
+      --answer: #134e3a;
+      --answer-bg: #e8f6ee;
+      --line: #e4dcc8;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -80px, #1e4a8c 0%, var(--navy) 55%),
+        var(--paper);
+      line-height: 1.45;
+    }
+
+    header {
+      color: #fff;
+      text-align: center;
+      padding: 2.4rem 1.2rem 1.6rem;
+    }
+
+    header p.kicker {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-family: system-ui, sans-serif;
+      color: var(--gold-soft);
+      margin: 0 0 0.6rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin: 0 0 0.4rem;
+      font-weight: 700;
+    }
+
+    header .sub {
+      max-width: 40rem;
+      margin: 0 auto;
+      color: #dbe4f5;
+      font-size: 1.02rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin: 1.3rem auto 0;
+      max-width: 52rem;
+    }
+
+    .toolbar a,
+    .toolbar button {
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .toolbar button.active {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .category {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin: 1.1rem 0;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(16, 36, 74, 0.08);
+    }
+
+    .category h2 {
+      margin: 0;
+      padding: 0.85rem 1.1rem;
+      background: var(--navy-2);
+      color: #fff;
+      font-size: 1.15rem;
+      letter-spacing: 0.03em;
+    }
+
+    .clue {
+      display: grid;
+      grid-template-columns: 4.6rem 1fr;
+      gap: 0.85rem;
+      padding: 1rem 1.1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .value {
+      font-family: system-ui, sans-serif;
+      font-weight: 800;
+      color: var(--navy);
+      background: var(--gold-soft);
+      border-radius: 10px;
+      height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .prompt {
+      margin: 0 0 0.65rem;
+      font-size: 1.02rem;
+    }
+
+    .answer {
+      background: var(--answer-bg);
+      color: var(--answer);
+      border-left: 4px solid #1f8a5b;
+      padding: 0.5rem 0.7rem;
+      border-radius: 0 8px 8px 0;
+      font-family: system-ui, sans-serif;
+      font-weight: 700;
+    }
+
+    .answer span.label,
+    .notes span.label {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-right: 0.45rem;
+      opacity: 0.75;
+    }
+
+    .notes {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    body.hide-answers .answer,
+    body.hide-answers .notes {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-family: system-ui, sans-serif;
+      font-size: 0.82rem;
+      padding: 0 1rem 2.4rem;
+    }
+
+    @media (max-width: 640px) {
+      .clue {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .value { width: 4.6rem; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      header { color: #000; padding: 0 0 1rem; }
+      header .sub, header p.kicker { color: #444; }
+      .toolbar { display: none; }
+      .category { break-inside: avoid; box-shadow: none; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">October 2026 General Conference · Host key</p>
+    <h1>October 2026 Apostolic Bangers</h1>
+    <p class="sub">First Presidency and Quorum of the Twelve talks. Clues, accepted answers, and host notes for a youth Jeopardy board.</p>
+    <div class="toolbar">
+      <a href="#who">Who Dropped That Line?</a>
+      <a href="#move">Your Move</a>
+      <a href="#lore">Conference Lore</a>
+      <a href="#closer">Come Closer</a>
+      <a href="#temple">Temple Flex</a>
+      <a href="#level">Level Up</a>
+      <button type="button" id="toggle" aria-pressed="false">Hide answers</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="category" id="who">
+      <h2>Who Dropped That Line?</h2>
+      <article class="clue">
+        <div class="value">$200</div>
+        <div>
+          <p class="prompt">This apostle said, “Your Savior is your lift. He is your ever-rising air. There is no limit to how high you can climb with Him.”</p>
+          <div class="answer"><span class="label">Answer</span> Elder Patrick Kearon</div>
+          <p class="notes"><span class="label">Host</span> Accept Kearon or Patrick Kearon. Pronounce KEER-un.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$400</div>
+        <div>
+          <p class="prompt">This Church President taught, “We all have present or future concerns or struggles we are trying to overcome. These may include questions or doubts. Whatever they are, the way to overcome them is to get closer to our Savior, Jesus Christ.”</p>
+          <div class="answer"><span class="label">Answer</span> President Dallin H. Oaks</div>
+          <p class="notes"><span class="label">Host</span> Accept Oaks, President Oaks, or Dallin Oaks.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$600</div>
+        <div>
+          <p class="prompt">This First Presidency counselor warned, “Gambling is built on the desire to obtain something for nothing.”</p>
+          <div class="answer"><span class="label">Answer</span> President D. Todd Christofferson</div>
+          <p class="notes"><span class="label">Host</span> Accept Christofferson or President Christofferson. Pronounce kris-TOFF-er-sun.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$800</div>
+        <div>
+          <p class="prompt">This apostle pleaded, “Covenants are not big or small. Please let us never speak of a temple as big or small, elaborate or plain.”</p>
+          <div class="answer"><span class="label">Answer</span> Elder Gerrit W. Gong</div>
+          <p class="notes"><span class="label">Host</span> Accept Gong or Elder Gong.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$1000</div>
+        <div>
+          <p class="prompt">This acting president of the Twelve taught, “Jesus Christ has the power to change us — you and me — purify us and unite us. The closer we come to Him, the closer we will come to each other.”</p>
+          <div class="answer"><span class="label">Answer</span> President Dieter F. Uchtdorf</div>
+          <p class="notes"><span class="label">Host</span> Accept Uchtdorf, Elder Uchtdorf, or President Uchtdorf. Pronounce OOKT-dorf.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="category" id="move">
+      <h2>Your Move</h2>
+      <article class="clue">
+        <div class="value">$200</div>
+        <div>
+          <p class="prompt">Elder Gary E. Stevenson closed by inviting everyone to do these three short action words — with both words and actions.</p>
+          <div class="answer"><span class="label">Answer</span> love, share, and invite</div>
+          <p class="notes"><span class="label">Host</span> Accept the three words in any order. Close enough if they get two of the three and you can nudge the third.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$400</div>
+        <div>
+          <p class="prompt">President D. Todd Christofferson said don’t just skip gambling — use the time and money you save for this.</p>
+          <div class="answer"><span class="label">Answer</span> doing good</div>
+          <p class="notes"><span class="label">Host</span> Accept serving others, helping people, or doing the Lord’s work.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$600</div>
+        <div>
+          <p class="prompt">Elder Gérald Caussé asked disciples to look each day for a chance to do this, even briefly — at home, at church, on social media, or in regular conversations.</p>
+          <div class="answer"><span class="label">Answer</span> bear testimony of Jesus Christ</div>
+          <p class="notes"><span class="label">Host</span> Accept share your testimony, witness of Christ, or talk about Jesus. Pronounce koh-SAY (Caussé).</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$800</div>
+        <div>
+          <p class="prompt">Elder Gerrit W. Gong invited Saints to come worship and rejoice with the Lord in this place, in temple doctrine, and in their personal temple culture.</p>
+          <div class="answer"><span class="label">Answer</span> the house of the Lord</div>
+          <p class="notes"><span class="label">Host</span> Accept the temple or the Lord’s house.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$1000</div>
+        <div>
+          <p class="prompt">Elder Neil L. Andersen promised that as you strengthen faith in Jesus Christ, your answers will come, your spiritual power will increase, and this will define your eternal soul.</p>
+          <div class="answer"><span class="label">Answer</span> your courage in following Christ</div>
+          <p class="notes"><span class="label">Host</span> Accept courage, spiritual courage, or courage to follow Jesus Christ.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="category" id="lore">
+      <h2>Conference Lore</h2>
+      <article class="clue">
+        <div class="value">$200</div>
+        <div>
+          <p class="prompt">This apostle opened Saturday morning with a groaner: “Why did the temple workers cross the road?” Punchline: to help people on the other side.</p>
+          <div class="answer"><span class="label">Answer</span> Elder Gerrit W. Gong</div>
+          <p class="notes"><span class="label">Host</span> Accept Gong. The “other side” means the other side of the veil.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$400</div>
+        <div>
+          <p class="prompt">This apostle used a glider plane to teach Saints to avoid “sinking air” and live in spiritual lift.</p>
+          <div class="answer"><span class="label">Answer</span> Elder Patrick Kearon</div>
+          <p class="notes"><span class="label">Host</span> Accept Kearon. Pronounce KEER-un.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$600</div>
+        <div>
+          <p class="prompt">This former heart doctor told of a transplant patient who survived two heart transplants, then complained that his oatmeal was served cold.</p>
+          <div class="answer"><span class="label">Answer</span> Elder Dale G. Renlund</div>
+          <p class="notes"><span class="label">Host</span> Accept Renlund or Dale Renlund. Pronounce REN-lund. He used the story to teach that people can forget big blessings and fuss about small annoyances.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$800</div>
+        <div>
+          <p class="prompt">This acting president of the Twelve opened his unity talk by sharing that he and his wife had just attended the baptisms of two of their great-grandchildren.</p>
+          <div class="answer"><span class="label">Answer</span> President Dieter F. Uchtdorf</div>
+          <p class="notes"><span class="label">Host</span> Accept Uchtdorf. Pronounce OOKT-dorf.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$1000</div>
+        <div>
+          <p class="prompt">In closing remarks, this Church President invited everyone to a Salt Lake Temple celebration whose public open house begins April 5, 2027.</p>
+          <div class="answer"><span class="label">Answer</span> President Dallin H. Oaks</div>
+          <p class="notes"><span class="label">Host</span> Accept Oaks or President Oaks.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="category" id="closer">
+      <h2>Come Closer</h2>
+      <article class="clue">
+        <div class="value">$200</div>
+        <div>
+          <p class="prompt">President Oaks said the way to overcome questions, doubts, and struggles is to do this with the Savior.</p>
+          <div class="answer"><span class="label">Answer</span> get closer to Jesus Christ</div>
+          <p class="notes"><span class="label">Host</span> Accept come unto Christ, draw nearer to Christ, or get closer to the Savior.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$400</div>
+        <div>
+          <p class="prompt">Elder Neil L. Andersen taught that these two qualities are hallmarks of disciples, and that choosing the first one gives you the second.</p>
+          <div class="answer"><span class="label">Answer</span> faith and courage</div>
+          <p class="notes"><span class="label">Host</span> Accept spiritual courage.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$600</div>
+        <div>
+          <p class="prompt">President Henry B. Eyring said this Isaiah promise, also sung in “How Firm a Foundation,” will become more precious in the time ahead.</p>
+          <div class="answer"><span class="label">Answer</span> Fear not, I am with thee</div>
+          <p class="notes"><span class="label">Host</span> Accept Fear not or Isaiah 41:10.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$800</div>
+        <div>
+          <p class="prompt">Elder Gary E. Stevenson listed three gospel fruits: you are a child of God, the plan of happiness, and this gift that can warn, comfort, and testify.</p>
+          <div class="answer"><span class="label">Answer</span> the Holy Ghost</div>
+          <p class="notes"><span class="label">Host</span> Accept gift of the Holy Ghost or Holy Spirit.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$1000</div>
+        <div>
+          <p class="prompt">Elder Ronald A. Rasband told families grieving for loved ones who left the gospel path that they cannot change those hearts, but this Person can, because He is a God of miracles.</p>
+          <div class="answer"><span class="label">Answer</span> Jesus Christ</div>
+          <p class="notes"><span class="label">Host</span> Accept the Savior, the Lord, or Christ.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="category" id="temple">
+      <h2>Temple Flex</h2>
+      <article class="clue">
+        <div class="value">$200</div>
+        <div>
+          <p class="prompt">Elder Gerrit W. Gong said that in a world of commotion and cares, Christ invites each person to this place of spiritual safety, harmony, and holiness.</p>
+          <div class="answer"><span class="label">Answer</span> the temple</div>
+          <p class="notes"><span class="label">Host</span> Accept house of the Lord or the Lord’s house.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$400</div>
+        <div>
+          <p class="prompt">President Oaks invited the world to this upcoming event for the Salt Lake Temple, running from April to October 2027.</p>
+          <div class="answer"><span class="label">Answer</span> open house</div>
+          <p class="notes"><span class="label">Host</span> Accept Salt Lake Temple open house or Salt Lake Temple Celebration. Starts April 5, 2027.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$600</div>
+        <div>
+          <p class="prompt">Elder Gong asked members never to label temples with these size words or these style words, but only to speak of holiness to the Lord.</p>
+          <div class="answer"><span class="label">Answer</span> big or small; elaborate or plain</div>
+          <p class="notes"><span class="label">Host</span> Accept either pair, or “size and fancy/plain.” Full quote uses both pairs.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$800</div>
+        <div>
+          <p class="prompt">Elder David A. Bednar taught that this crowning temple ordinance between a husband and a wife is still conditional in mortality until the Holy Ghost ratifies it.</p>
+          <div class="answer"><span class="label">Answer</span> sealing</div>
+          <p class="notes"><span class="label">Host</span> Accept temple sealing, eternal marriage, or being sealed. Pronounce BED-nar.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$1000</div>
+        <div>
+          <p class="prompt">Elder Bednar compared covenants and ordinances to these ID-style items that stay valid through faithfulness and can open heavenly windows of opportunity.</p>
+          <div class="answer"><span class="label">Answer</span> spiritual credentials</div>
+          <p class="notes"><span class="label">Host</span> Accept credentials. Close enough: “a spiritual ID” or “a spiritual passport.”</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="category" id="level">
+      <h2>Level Up</h2>
+      <article class="clue">
+        <div class="value">$200</div>
+        <div>
+          <p class="prompt">President D. Todd Christofferson said smartphones turned this morally wrong activity into something available anywhere, including sports betting for teens.</p>
+          <div class="answer"><span class="label">Answer</span> gambling</div>
+          <p class="notes"><span class="label">Host</span> Accept betting, wagering, or sports betting. He pleaded, “O be wise.”</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$400</div>
+        <div>
+          <p class="prompt">Elder Ulisses Soares invited Saints to live this law in a higher and holier way, pairing it with earnest prayer and generous offerings to lift the oppressed.</p>
+          <div class="answer"><span class="label">Answer</span> fasting</div>
+          <p class="notes"><span class="label">Host</span> Accept the law of the fast or fast offerings. Pronounce SWAH-ress (Soares).</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$600</div>
+        <div>
+          <p class="prompt">Elder Quentin L. Cook recalled a young David O. McKay seeing a stone that said, “What e’er thou art, act well thy part.” Cook said these two Christlike qualities are linked to true happiness.</p>
+          <div class="answer"><span class="label">Answer</span> integrity and virtue</div>
+          <p class="notes"><span class="label">Host</span> Accept either word if the team is close, but prefer both.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$800</div>
+        <div>
+          <p class="prompt">Elder Gérald Caussé taught that this personal gift is not a talent to hide. It need not be long, eloquent, or dramatic — it only needs to be true.</p>
+          <div class="answer"><span class="label">Answer</span> testimony</div>
+          <p class="notes"><span class="label">Host</span> Accept bearing testimony or witness. Pronounce koh-SAY (Caussé). He is a French apostle.</p>
+        </div>
+      </article>
+      <article class="clue">
+        <div class="value">$1000</div>
+        <div>
+          <p class="prompt">President Oaks warned students and Saints, “Never let your secular learning limit” these.</p>
+          <div class="answer"><span class="label">Answer</span> your spiritual horizons</div>
+          <p class="notes"><span class="label">Host</span> Accept spiritual horizons or spiritual growth/learning.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Host key for a youth Jeopardy board from October 2026 talks by the First Presidency and Quorum of the Twelve Apostles.
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("toggle");
+    toggle.addEventListener("click", () => {
+      const hidden = document.body.classList.toggle("hide-answers");
+      toggle.textContent = hidden ? "Show answers" : "Hide answers";
+      toggle.classList.toggle("active", hidden);
+      toggle.setAttribute("aria-pressed", String(hidden));
+    });
+  </script>
+</body>
+</html>
